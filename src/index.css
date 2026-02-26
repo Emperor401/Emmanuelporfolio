@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Rajdhani', sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #000000; }
+::-webkit-scrollbar-thumb { background: #00ff8844; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #00ff8888; }
+
+.glass {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.neon-text-cyan    { color: #00ff88; text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff8866; }
+.neon-text-blue    { color: #0066ff; text-shadow: 0 0 10px #0066ff, 0 0 20px #0066ff66; }
+.neon-text-violet  { color: #0044cc; text-shadow: 0 0 10px #0044cc, 0 0 20px #0044cc66; }
+.neon-text-magenta { color: #00ccff; text-shadow: 0 0 10px #00ccff, 0 0 20px #00ccff66; }
+.neon-text-green   { color: #00ff66; text-shadow: 0 0 10px #00ff66, 0 0 20px #00ff6666; }
+
+.gradient-text {
+  background: linear-gradient(135deg, #00ff88, #0066ff, #00ccff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: gradientMove 4s ease infinite;
+}
+
+@keyframes gradientMove {
+  0%,100% { background-position: 0% 50%; }
+  50%     { background-position: 100% 50%; }
+}
+
+.neon-border-cyan    { border: 1px solid #00ff8844; box-shadow: 0 0 15px #00ff8822, inset 0 0 15px #00ff8811; }
+.neon-border-blue    { border: 1px solid #0066ff44; box-shadow: 0 0 15px #0066ff22, inset 0 0 15px #0066ff11; }
+.neon-border-violet  { border: 1px solid #0044cc44; box-shadow: 0 0 15px #0044cc22, inset 0 0 15px #0044cc11; }
+.neon-border-magenta { border: 1px solid #00ccff44; box-shadow: 0 0 15px #00ccff22, inset 0 0 15px #00ccff11; }
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: #00ff88;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999;
+  box-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
+  transition: transform 0.1s ease;
+}
+
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #00ff8866;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99998;
+  transition: transform 0.12s ease, width 0.2s, height 0.2s;
+}
+
+.section-padding { padding: 5rem 1.5rem; }
+@media (min-width: 768px)  { .section-padding { padding: 6rem 2rem; } }
+@media (min-width: 1024px) { .section-padding { padding: 7rem 4rem; } }
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(0,255,136,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,136,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
